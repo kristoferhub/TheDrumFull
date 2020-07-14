@@ -71,13 +71,19 @@ $app->get('/teste', function() { echo "Verificação concluida!"; })
 
 //pegar os dados
 //::class proprio do php que retorna uma string com o caminho completo.
-$app->get('/loja', LojaController::class . ':getLojas')->add(basicAuth());
+$app->get('/loja', LojaController::class . ':getLojas');//->add(basicAuth());
 //inserir os dados 
-$app->post('/loja', LojaController::class . ':insertLoja')->add(basicAuth());
+$app->post('/loja', LojaController::class . ':insertLoja');//->add(basicAuth());
 //alterar os dados 
-$app->put('/loja', LojaController::class . ':updateLoja')->add(basicAuth());
+$app->put('/loja', LojaController::class . ':updateLoja');//->add(basicAuth());
 // para excluir 
-$app->delete('/loja', LojaController::class . ':deleteLoja')->add(basicAuth());
+$app->delete('/loja', LojaController::class . ':deleteLoja');//->add(basicAuth());
+
+
+//Novas rotas para o Front
+$app->get('/loja/{id}', LojaController::class . ':buscarPorId');
+$app->put('/loja/{id}', LojaController::class . ':updateLoja');
+$app->delete('/loja/{id}', LojaController::class . ':deleteLoja');
 
 
 //4 rotas iguais com metodos diferentes. get/post/put/delete
@@ -85,13 +91,18 @@ $app->delete('/loja', LojaController::class . ':deleteLoja')->add(basicAuth());
 
 //pegar os dados
 //Aqui será pega a class ProdutoController e o metodo getProducts da classe.
-$app->get('/produto', ProdutoController::class . ':getProdutos')->add(basicAuth());//Middleware basiAuth
+$app->get('/produto', ProdutoController::class . ':getProdutos');//->add(basicAuth());//Middleware basiAuth
 //inserir os dados
-$app->post('/produto', ProdutoController::class . ':insertProduto')->add(basicAuth());
+$app->post('/produto', ProdutoController::class . ':insertProduto');//->add(basicAuth());
 //alterar os dados
-$app->put('/produto', ProdutoController::class . ':updateProduto')->add(basicAuth());
+$app->put('/produto', ProdutoController::class . ':updateProduto');//->add(basicAuth());
 // para excluir
-$app->delete('/produto', ProdutoController::class . ':deleteProduto')->add(basicAuth());
+$app->delete('/produto', ProdutoController::class . ':deleteProduto');//->add(basicAuth());
+
+//Novas rotas para o Front
+$app->get('/produto/{id}', ProdutoController::class . ':buscarPorId');
+$app->put('/produto/{id}', ProdutoController::class . ':updateProduto');
+$app->delete('/produto/{id}', ProdutoController::class . ':deleteProduto');
 
 //Digitando o namespace completo
 //$app->get('/produto','\App\Controllers\ProductController:getProducts');

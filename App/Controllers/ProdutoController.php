@@ -16,6 +16,12 @@ use App\DAO\MYSQL\GerenciadorLojas\ProdutosDAO;
 //Use para poder usar o ProdutosModel.
 use App\Models\MYSQL\GerenciadorLojas\ProdutoModel;
 
+//Use para poder usar o LojasDAO.
+use App\DAO\MYSQL\GerenciadorLojas\LojasDAO;
+
+//Use para poder usar o LojasModel.
+use App\Models\MYSQL\GerenciadorLojas\LojaModel;
+
 //Tá como classe final, pq ninguem vai herdar o ProdutoController.
 final class ProdutoController{
     //metodo que irá retornar um Response
@@ -46,13 +52,18 @@ final class ProdutoController{
 	public function insertProduto(Request $request, Response $response, array $args): Response{
 		$data = $request->getParsedBody();
         
+        $lojasDAO = new LojasDAO();
+        $loja = $lojasDAO->buscarPorId($data['loja_id']['id']);
+        
+        $produto = new ProdutoModel(0,$loja,$data['nome'],(float)$data['preco'],(int)$data['quantidade']);
         $produtosDAO = new ProdutosDAO();
-        $produto = new ProdutoModel();
+
+        
         //Como ele retorna ele mesmo "return this" em LojaModel, pode se acessar outros metodos novamente.
-		$produto->setLojaId((int)$data['loja_id'])
-			->setNome($data['nome'])
-            ->setPreco((float)$data['preco'])
-            ->setQuantidade((int)$data['quantidade']);
+		// $produto->setLojaId((int)$data['loja_id'])
+		// 	->setNome($data['nome'])
+        //     ->setPreco((float)$data['preco'])
+        //     ->setQuantidade((int)$data['quantidade']);
         $produtosDAO->insertProduto($produto);
         //Tudo baseado no que tá em Models restringindo o que vai enviar
 		//definir o response
@@ -62,15 +73,17 @@ final class ProdutoController{
 
 	}
 	public function updateProduto(Request $request, Response $response, array $args): Response{
-		$data = $request->getParsedBody();
+        $id = $args['id'];
+        $data = $request->getParsedBody();
 
         $produtosDAO = new ProdutosDAO();
-        $produto = new ProdutoModel();
-		$produto->setId((int)$data['id'])
-			->setLojaId((int)$data['loja_id'])
-            ->setNome($data['nome'])
-            ->setPreco((float)$data['preco'])
-            ->setQuantidade((int)$data['quantidade']);
+        //$produto = new ProdutoModel();
+        $produto = new ProdutoModel((int)$id,(int)$data['loja_id'],$data['nome'],(float)$data['preco'],(int)$data['quantidade']);
+		// $produto->setId((int)$data['id'])
+		// 	->setLojaId((int)$data['loja_id'])
+        //     ->setNome($data['nome'])
+        //     ->setPreco((float)$data['preco'])
+        //     ->setQuantidade((int)$data['quantidade']);
         $produtosDAO->updateProduto($produto);
 		//definir o response
         $response = $response->withJson(['message' => 'Produto alterado com sucesso!']);
@@ -81,12 +94,22 @@ final class ProdutoController{
 	public function deleteProduto(Request $request, Response $response, array $args): Response{
 		$queryParams = $request->getParsedBody();
         $produtosDAO = new ProdutosDAO();
-        $id = (int)$queryParams['id'];
+        //$id = (int)$queryParams['id'];
+        $id = $args['id'];
         $produtosDAO->deleteProduto($id);
 		//definir o response
         $response = $response->withJson(['message' => 'Produto deletado com sucesso!']);
 		
 		return $response;
 
-	}
+    }
+    //Buscar por id
+    public function buscarPorId(Request $request, Response $response, $args): Response{
+        $id = $args['id'];
+
+        $dao = new ProdutosDAO;
+        $produto = $dao->buscarPorId($id);
+        $response = $response->withJson($produto);
+        return $response;
+    }
 }

@@ -40,4 +40,19 @@ class LojasDAO extends Conexao{
 		$statement = $this->pdo->prepare('DELETE FROM lojas WHERE id = :id;'); //consultas
 		$statement->execute(['id'=>$id]);
 	}
+	//Buscar por id no Front
+	public function buscarPorId($id){
+		$statement = $this->pdo->prepare('SELECT * FROM lojas WHERE id = :id;');
+		$statement->bindParam ('id', $id);
+		$statement->execute();
+		$result = $statement->fetch(\PDO::FETCH_ASSOC);
+		if($result){
+			return new LojaModel($result['id'], $result['nome'], $result['telefone'], $result['endereco']);
+
+		}
+			else
+				return null;
+		
+		
+	}
 }

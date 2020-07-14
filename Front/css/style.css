@@ -1,0 +1,1283 @@
+/* PÁGINA RESPONSIVA(Qualquer tipo de resolução)  Estilo da página TFT */
+
+/*Reset da página*/
+*{
+    margin:0;
+    padding:0;
+    font-size:100%;
+    border: none;
+    outline: none;
+    font-weight: 300;
+    font-family: Zapf-Chancery;
+
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none; /*tirar decoração dos links*/
+}
+ul{
+    list-style: none;
+}
+img{
+    max-width:100%;
+}
+/* Geral*/
+body {
+    
+    color: #4d4d4d; /* Cor cinza escuro para a página*/
+}
+/* BODY, até aqui */
+
+/* Cabeçalhos(titulos) */
+h1, h2, h3 {
+    margin: 0; /* margem 0*/ 
+    font-weight: 700; /* Fonte em negrito*/
+}
+/** Classe do botão  **/
+.botao {
+    color: #ffff; /** Cor do texto  **/
+    text-decoration: none; /** Alterar a decoração do texto tirar sublinhado  **/
+    padding: 10px 30px; /** 10px em cima e embaixo/30px ao redor **/
+    background-color: #8B5A2B; /** Cor de fundo **/
+    font-size: .9em; /** Fonte 90% da fonte padrão de 16px  **/
+    border-radius: 3px; /** Borda arredondada para não ficar muito quadrado **/
+    position: relative;
+    top: 30%;
+    border: 0.5px solid white ; /** Borda nos campos **/;
+}
+/* BOTÃO, até aqui */
+
+/* LAYOUT QUE SE ADAPTA AO MOBILE */
+
+/*Cabeçalho*/
+#pagina{
+    display:none; /*Para sumir o menu do desktop*/
+}
+.cabecalho{
+    width: 100%; /*Ocupar 100% do cabeçalho*/
+    /*height: 100%;*/
+    z-index: 9999;
+}
+.apertar{
+    width:56px;
+    height:56px;
+    float: right;
+    text-align:center;
+    color:black;
+    border-radius:56px;
+    cursor:pointer;
+    background: linear-gradient(to right,#8B5A2B,#da6709);
+}
+/*Configurações do Menu(nav)*/
+.navegar{
+    display:none;
+    width:100%;
+    height:100%;
+    position:fixed;
+    background:rgba(0,0,0,0.9); 
+    top: 0; 
+    left:0;
+}
+.fechar{
+    font-size: 3rem;
+    color:#8B5A2B;
+    float: right;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+.navegar ul{
+    width: 100%;
+    float: left;
+    text-align: center;
+    list-style:none;
+}
+.navegar li{
+    padding: 20px;
+}   
+.navegar li a{
+    font-size: 2rem;
+    color:#8B5A2B;
+    padding:20px 30px;
+    text-decoration: none;
+}
+.navegar li a:hover{
+    border: 1px solid #8B5A2B;
+}
+/* NAV, até aqui */
+
+.titulo{
+    width: 100px;
+    height: 65px;
+    float: left;
+    background: url(../imagens/icone.png) center center/100px no-repeat; /*Declarar a posição (center) e deixar 56px sem perder qualidade*/
+    font-size: 0px;
+}
+
+/* CABEÇALHO */
+
+/** Configurações do header **/
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imagens/capa.png);
+    background-position: center; /** Pocição centralizada eixo vertical e horizontal **/
+    background-size: cover; /** Tamanho do fundo, cover para se expandir e ocupar o espaço inteiro **/
+    background-repeat: no-repeat; /** Sem repetir o fundo nos eixos x e y  **/
+    background-attachment: fixed;
+    color: black; /** cor do texto de dentro **/
+    display: flex; /** container flex, elementos em linha um do lado do outro**/
+    flex-direction: column; /** direção em colunas, ficar em colunas unicas no mobile **/
+    align-items: center; /** Alinhamento centralizado **/
+    text-align: center; /** Alinhamento centralizado do texto **/
+    padding: 60px; /** Espaço interno na area(background), só um 60px pq será todos os valores iguais **/
+    font-size: 1.5em; /** Tamanho da fonte geral **/
+    height:500px;
+}
+/** Paragrafo no header **/
+header p {
+    margin-bottom: 2em; /** Margem inferior(bottom)/"em"(2em=32px) medida relativa diferente do px que é real **/
+    color: black; /** cor do parágrafo **/
+    font-size: 1.0em; /** Tamanho da fonte só no paragrafo **/
+}
+header .fundo {
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+/* HEADER, até aqui */
+
+/* Tabela2 */
+#tabela2 {
+    display: flex; /** Container flex **/
+    flex-direction: column; /** Direção em coluna **/
+    align-items: center; /** Alinhamento central **/
+    text-align: center; /** Alinhar o texto ao centro **/
+    padding: 40px 0; /** Sem paddding no topo(0) 20px(esquerda e direita) 20px(inferior) **/
+    background-color: black; /** Cor de fundo **/
+    color: #8B5A2B; /** cor do texto(meio cinza) **/
+ 
+}
+#tabela2 h2{
+    color: #8B5A2B; /** Cor do h2 **/
+    font-size: 2.0em; /*Tamanho da fonte*/
+}
+
+#tabela2 a {
+    font-size: 1rem;
+    color:#8B5A2B;
+    padding:20px 30px;
+    text-decoration: none;
+}
+#tabela2 .enviar2{
+    font-size: 1.5rem;
+}
+
+#tabela2 table,td, th {
+    border: 3px solid #8B5A2B;
+  }
+  
+  table {
+    border-radius: 1px;  
+    /* border-collapse: collapse; */
+    width: 100%;
+    background-color: black;
+  }
+  
+  th {
+    height: 50px;
+    width: 300px;
+  } 
+
+#tabela2 p {
+    margin-bottom: 40px; /** margem inferior multiplicado pelo valor da fonte e elemento(16px vezes 2.5em) 2.5em  **/
+    margin-top: 25px;
+    width: 90%;
+    color: #8B5A2B; /** Cor do parágrafo **/
+    font-size: 1.0em; /** 20px ou 16px no tamanho da fonte  **/
+}
+
+
+
+/* SOBRE */
+
+/* Somente para o h2 da section sobre */
+#sobre h2{
+     color: #8B5A2B; /** Cor do h2 **/
+     font-size: 1.5em; /*Tamanho da fonte*/
+}
+/* Section sobre configurações */
+#sobre {
+    display: flex; /** Container flex **/
+    flex-direction: column; /** Direção em coluna **/
+    align-items: center; /** Alinhamento central **/
+    text-align: center; /** Alinhar o texto ao centro **/
+    padding: 40px 0; /** Sem paddding no topo(0) 20px(esquerda e direita) 20px(inferior) **/
+    background-color: black; /** Cor de fundo **/
+    color: #f1f1f1; /** cor do texto(meio cinza) **/
+ 
+}
+/** Estilo só do parágrafo **/
+#sobre p {
+    margin-bottom: 40px; /** margem inferior multiplicado pelo valor da fonte e elemento(16px vezes 2.5em) 2.5em  **/
+    margin-top: 25px;
+    width: 90%;
+    color: #ffff; /** Cor do parágrafo **/
+    font-size: 1.0em; /** 20px ou 16px no tamanho da fonte  **/
+}
+
+/** Classe('ponto'.) e ID(#) do botão **/
+/** Diretamente no botão do sobre, só do sobre  **/
+#sobre .botao {
+    background-color: #8B5A2B; /** Cor de fundo  **/
+    color: #f1f1f1; /** Cor da letra **/
+    margin-top: 10px;
+}
+/* SOBRE, até aqui */
+
+/*  Section do comojogar */
+#como_jogar{
+    display: flex; /* Container flex */
+    flex-direction: column; /* Direção em coluna */
+    align-items: center; /* Alinhados ao centro */
+    background-color: black;
+}
+
+/* Dedicado somente ao h2 da area do comojogar */
+#como_jogar h2{
+    color: #8B5A2B; /** Cor do h2 **/
+    font-size: 1.5em;
+    margin-top:40px;
+}
+
+/* Ao invés de criar uma classe OUTROS, será alterado as 3 "divs" de dentro da section*/
+#como_jogar div {
+    display: flex; /* Container flex */
+    flex-direction: column; /* Direção em coluna */
+    align-items: center; /* Alinhamento central */
+    text-align: center; /* Alinha o texto */
+    margin-top: 50px; /* Margem para saber qual é o icone dos itens(tava muito próximo) */
+    padding:1%;
+    border: 1px solid #8B5A2B;
+    width: 90%;
+}
+/* Para as imagens da section OUTROS */
+#como_jogar img{
+    width: 100%;/* Largura das imagens em 50% para ficar uma de cada lado */
+}
+#como_jogar hr{
+    width: 200px;
+    height: 2px;
+    background-color: #8B5A2B;
+}
+#como_jogar p{
+    padding:20px 0;
+    color: white;
+    width: 100%;
+    height: auto;
+    font-size:1.0em;
+}
+/* comojogar, até aqui */
+
+/*Configuração do formulário de cadastro(sugestao)*/
+#sugestao{
+  background-image: url('../imagens/formulario.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
+  position: relative;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 100px 0; 
+  text-align: center;
+  height: 450px;
+}
+
+#sugestao .fundo {
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+#sugestao h2{
+    padding-top:40px;
+    font-size: 1.5em;
+    text-align: center; 
+    color: #8B5A2B;
+    text-shadow: 2px 2px 10px black;
+    margin-bottom: 15px; 
+}
+#sugestao p{
+    text-align: center;
+    margin-bottom: 35px;
+    color: #8B5A2B;
+    font-size: 1.0em;
+}
+#sugestao hr{
+    background-color: #8B5A2B;
+    align-items: center;
+}
+#sugestao .input, #sugestao textarea {
+    display: block; 
+    margin: 20px auto;
+    font-size: 17px;
+    border: 5px solid #8B5A2B;
+    width: 80%; /** Tamanho dos espaços **/ 
+    background-color: #fff;
+    padding:5px;
+}
+/*  Botão de enviar  */
+.enviar {
+    background-color: #8B5A2B; 
+    color: #ffff; 
+    font-size: 20px;
+    width: 115px;
+    margin-right: 20px;
+    width:200px;
+    height:40px;
+}
+/*Configuração do formulário de cadastro até aqui*/
+
+/* Configurações da section galeria*/
+#galeria { 
+     display: flex; /* Container flex */  
+     flex-direction: column; /* Direção em coluna para cada imagem ocupar seu espaço na tela */  
+     align-items: center; /* Alinhar ao centro do container */
+     justify-content: center; /*Deixar tudo no meio*/
+     padding: 10px; /* Espaço interno */
+     background-color: black; /* Cor de fundo */
+} 
+
+/* Somente para o h2 */
+#galeria h2 {
+    margin-bottom: 20px; /* Margem inferior de 20px, pois o titulo estava muito perto das imagens */
+    color: #8B5A2B; /* Cor do h2 */
+    font-size: 1.5em;
+    margin-top: 40px;
+    
+}
+/* Para as imagens da da section galeria */
+#galeria img {
+    width: 100%; /* Largura de 100% para as imagens ficarem no tamanho total */
+    border: 1px solid #8B5A2B;
+    border-radius: 3px; /** Borda arredondada para não ficar muito quadrado **/
+    margin: 10px 10px;
+}
+/* GALERIA, até aqui */
+
+/*  Section do OUTROS */
+
+/* Dedicado somente ao h2 da area do outros */
+#outros h2{
+    color: #8B5A2B; /** Cor do h2 **/
+    font-size: 1.5em;
+    text-shadow: 3px 3px 12px black;
+    margin-top: 40px;
+}
+/* Configuração de toda a area OUTROS */
+#outros {
+    padding: 20px; /* Espaçamento interno de 20px total */
+    display: flex; /* Container flex */
+    flex-direction: column; /* Direção em coluna */
+    align-items: center; /* Alinhados ao centro */
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../imagens/capa_imagem.jpg)no-repeat fixed;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black; /** Cor da letra **/
+
+}
+/* Ao invés de criar uma classe OUTROS, será alterado as 3 "divs" de dentro da section*/
+#outros div {
+    display: flex; /* Container flex */
+    flex-direction: column; /* Direção em coluna */
+    align-items: center; /* Alinhamento central */
+    text-align: center; /* Alinha o texto */
+    margin-top: 50px; /* Margem para saber qual é o icone dos itens(tava muito próximo) */
+    padding:20px;
+}
+/* Para as imagens da section OUTROS */
+#outros img{
+    width: 100%;/* Largura das imagens em 50% para ficar uma de cada lado */
+    border: 1px solid #8B5A2B; /** Borda nos campos **/;
+
+}
+#outros hr{
+    width: 200px;
+    height: 2px;
+    background-color: #8B5A2B;
+}
+#outros h3{
+    padding:5px;
+    color: #8B5A2B; /** Cor do h3 **/
+    font-size: 1.3em;
+    text-shadow: 3px 3px 12px black
+}
+#outros p{
+    font-size: 1.0em;
+    color: white;
+    
+}
+/* OUTROS, até aqui */
+
+/*Baixar o jogo*/
+#baixar{
+    display: flex; /* Container flex */
+    background-color: black;/* Cor cinza da section contato*/
+    flex-direction: column; /* Direção em coluna */
+    align-items: center; /* Alinhamento central */
+    text-align: center; /* Alinhar o texto ao centro */
+    padding: 60px 20px; /* Espaço interno */
+}
+#baixar h2{
+    color: #8B5A2B; /* Cor da letra do h2 */
+    padding:20px 5px 20px 20px;
+    font-size: 1.5em;
+}
+#baixar hr{
+    width: 200px;
+    height: 2px;
+    background-color: #8B5A2B;
+    margin-top:10px;
+}
+#baixar p{
+    color: #8B5A2B; /* Cor da letra no parágrafo */
+    margin-top:20px;
+    margin-bottom:20px;
+    font-size: 1.0em;
+}
+#baixar img{
+    width:150px;
+}
+.btn-baixar {
+    color: black; /** Cor do texto  **/
+    text-decoration: none; /** Alterar a decoração do texto tirar sublinhado  **/
+    padding: 10px 30px; /** 10px em cima e embaixo/30px ao redor **/
+    background-color: #8B5A2B; /** Cor de fundo **/
+    font-size: .9em; /** Fonte 90% da fonte padrão de 16px  **/
+    border-radius: 3px ; /** Borda arredondada para não ficar muito quadrado **/
+    margin-top:20px;
+    border: 1px solid white ; /** Borda nos campos **/;
+}
+/*Baixar o jogo até aqui*/
+
+/*Parte do formulario de logar e criar topicos*/
+#formulario{
+    display: flex;
+    flex-direction: column;
+    background-color: #8B5A2B;
+    align-items: center;
+    padding: 50px 0;
+    justify-content: center;
+    text-align: center;
+}
+
+#formulario h2{
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+    margin-bottom: 15px;
+    margin-top:30px;
+}
+#formulario label{
+    margin-bottom: 35px;
+    text-align: center;
+    color: black;
+    font-size: 1.0em;   
+}
+
+#formulario p, label{
+    margin-bottom: 35px;
+    text-align: center;
+    color: black;
+    font-size: 1.0em;   
+}
+#formulario form{
+    width: 100%;
+}
+/* Campos de nome, email e campo textarea */
+#formulario .input, #formulario textarea {
+    display: flex; /** Renderizar como bloco **/
+    width: 80%;
+    font-size: 17px;/** Tamanho da fonte dentro dos quadrados **/
+    border: 5px solid black; /** Borda nos campos **/
+    background-color: #f1f1f1;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Caixa de seleção no formulário */
+#formulario select {
+    display: flex; /** Renderizar como bloco **/
+    font-size: 14px; /** Tamanho da fonte dentro do quadrado **/
+    border: 5px solid black; /** Borda nos campos **/
+    background-color: #fff;
+    margin: 20px auto;
+    width: 82%;
+    color: black;
+    display: block;
+}
+
+/*  Botão de enviar  */
+#formulario .enviar {
+    background-color: black; /** Tamanho dos espaços **/
+    color: #8B5A2B; /** Cor do "enviar" **/
+    font-size: 20px;
+    margin-right: 20px;
+    width:200px;
+    height:40px;
+}
+/*Parte do formulario de logar e criar topicos até aqui*/
+
+#login{
+    display: flex;
+    flex-direction: column;
+    background-color: #8B5A2B;
+    align-items: center;
+    padding: 50px 0;
+    justify-content: center;
+    text-align: center;
+}
+
+#login h2{
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+    margin-bottom: 15px;
+    margin-top:30px;
+}
+
+
+#login p{
+    margin-bottom: 35px;
+    text-align: center;
+    color: black;
+    font-size: 1.0em;   
+}
+#login form{
+    width: 100%;
+}
+/* Campos de nome, email e campo textarea */
+#login .input, #formulario textarea {
+    display: flex; /** Renderizar como bloco **/
+    width: 80%;
+    font-size: 17px;/** Tamanho da fonte dentro dos quadrados **/
+    border: 5px solid black; /** Borda nos campos **/
+    background-color: #f1f1f1;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Caixa de seleção no formulário */
+#login select {
+    display: flex; /** Renderizar como bloco **/
+    font-size: 14px; /** Tamanho da fonte dentro do quadrado **/
+    border: 5px solid black; /** Borda nos campos **/
+    background-color: #fff;
+    margin: 20px auto;
+    width: 82%;
+    color: black;
+    display: block;
+}
+
+/*  Botão de enviar  */
+#login .enviar {
+    background-color: black; /** Tamanho dos espaços **/
+    color: #8B5A2B; /** Cor do "enviar" **/
+    font-size: 20px;
+    margin-right: 20px;
+    width:200px;
+    height:40px;
+}
+
+/*Mapas do tft*/
+#mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imagens/fundo_pratos.jpg)no-repeat fixed;
+    background-repeat: no-repeat;/*Para não repetir o background*/
+    background-size: cover; /*Usar toda a imagem*/
+    background-attachment: fixed;
+}
+
+#mapa div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+
+}
+#mapa h2{
+    font-size: 1.5em;
+    color: #8B5A2B;
+    text-shadow: 2px 2px 10px black;
+    padding: 40px;
+}
+#mapa h3{
+    font-size: 1.1em;
+    padding:5px;
+    color:#8B5A2B;
+    text-shadow: 2px 2px 10px black;
+}
+#mapa img{
+    justify-content:space-around;
+}
+
+/*Mapas do tft até aqui*/
+
+
+/* Configurações gerais do footer */
+footer{
+    text-align: center; /* Alinhar o texto ao centro */
+    background-color: black; /* Cor da área */
+    color: #8B5A2B; /* Cor da letra */
+    padding-top: 10px; /* Espaço interno top de 10 px */
+    padding-bottom: 20px; /* Espaço interno inferior de 10px */
+    padding-right:10px;
+    height: 50px;
+}
+/* Configuração do "link"(titulo) */
+footer .local > a{
+    text-decoration: none; /** Decoração do texto, tirar o sublinhado do titulo **/
+    color: #8B5A2B; /** Cor da letra no titulo **/
+    font-weight: 300; /** Fonte em negrito **/
+    font-size: 0; /** Tamanho da letra **/
+
+}
+footer p{
+    margin-top:20px;
+}
+/* Mudar a cor e tirar o link*/
+footer .local  p > a {
+    color:#8B5A2B; /* Cor do link  */
+    text-decoration: none; /* Decoração do texto tirar o sublinhado do parágrafo */
+    font-size: 20px;
+}
+
+/* Formatação do link do logo quando o mouse está posicionado sobre o item */
+footer .local > a:hover {
+    color: grey;
+}
+
+/* Formatação do link do site quando o mouse está posicionado sobre o item */
+footer .local p > a:hover {
+    color: grey; /* Cor do link ao passar o mouse  */
+}
+
+/*Logo do footer*/
+.titulo2{
+    background: url(../imagens/capa2.png) center center/100px no-repeat; /*Declarar a posição (center) e deixar 56px sem perder qualidade*/
+    font-size: 0px;
+    width: 140px;
+    height: 45px;
+    float: left;
+}
+/* Rodapé até aqui */
+
+
+@media (min-width: 462px) {
+    #mapa {
+        flex-direction: row; /* Mudar a direção para linha  */
+        flex-wrap: wrap; /* Quebra de linha nos itens se o tamanho deles forem maior */
+        align-items: flex-start; /* Alinhamento ao começo(flex-start)  */
+        margin: 0 auto; /* Para ficar centralizado(margem de 0 pra cima e pra baixo e automaticamente para os lados) */
+        padding:20px;
+        justify-content: center;
+    }
+    #mapa h2{
+        text-align: center;
+        width: 100%; /* Largura de 100%  */
+    }
+    #mapa div {
+        width:40%;
+        padding: 0px 10px; /* Espaço interno a cada uma  */
+    }
+}
+@media (min-width: 620px){
+    .botao {
+        top: 70%;
+    }
+    header {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imagens/capa.png);
+        background-position: center; /** Pocição centralizada eixo vertical e horizontal **/
+        background-size: cover; /** Tamanho do fundo, cover para se expandir e ocupar o espaço inteiro **/
+        background-repeat: no-repeat; /** Sem repetir o fundo nos eixos x e y  **/
+        background-attachment: fixed;
+        color: black; /** cor do texto de dentro **/
+        display: flex; /** container flex, elementos em linha um do lado do outro**/
+        flex-direction: column; /** direção em colunas, ficar em colunas unicas no mobile **/
+        align-items: center; /** Alinhamento centralizado **/
+        text-align: center; /** Alinhamento centralizado do texto **/
+        padding: 60px; /** Espaço interno na area(background), só um 60px pq será todos os valores iguais **/
+        font-size: 1.5em; /** Tamanho da fonte geral **/
+        height:500px;
+    }
+} 
+
+@media (min-width: 768px) { 
+    /* SECTION DO SOBRE */
+    #sobre {
+        justify-content: center; /* Ficar ao centro da section(sobre)  */
+    }
+    #sobre h2{
+        font-size:2.0em;
+    }
+    #sobre p{
+        font-size:1.3em;
+    }
+    /* ComoJogar */
+    #como_jogar{
+        flex-direction: row; /* Mudar a direção para linha  */
+        flex-wrap: wrap; /* Quebra de linha nos itens se o tamanho deles forem maior */
+        align-items: flex-start; /* Alinhamento ao começo(flex-start)  */
+        margin: 0 auto; /* Para ficar centralizado(margem de 0 pra cima e pra baixo e automaticamente para os lados) */
+        padding:20px 0;
+        justify-content: space-around;
+        justify-content: center;
+    }
+    
+    /* Centralizar o (h2)  */
+    #como_jogar h2 {
+        text-align: center; /* Centralizar ao centro o cabeçario  */
+        width: 100%; /* Largura de 100%  */
+        font-size:2.0em;
+    }
+
+    #como_jogar p{
+        font-size:1.3em;
+        height: 150px;
+    }
+    /* Restringir as DIVS da section comojogar  */
+    #como_jogar div {
+        flex-wrap: wrap;
+        width: 40%;
+        align-items: center;
+        margin:30px auto;
+        height:400px;
+        border: 2px red;
+    }
+    
+    #sugestao {
+        justify-content: center; /* Ficar ao centro da section(sugestao)  */
+    }
+    #sugestao h2{
+        font-size:2.0em;
+    }
+    #sugestao p{
+        font-size:1.3em;
+    }
+    /* Section da GALERIA */
+    #galeria {
+        flex-direction: row; /* Direção dos itens em linha  */
+        flex-wrap: wrap; /* Quebra de linhas  */
+    }
+    
+    /* Definição do título h2 */
+    #galeria h2 {
+        width: 100%; /* Largura de 100%  */
+        text-align: center; /* Centralizar o texto ao centro  */
+        font-size:2.0em;
+
+    }
+    
+    /* Definir imagens da galeria  */
+    #galeria img {
+        width: 30%; /*30% para ficar uma do lado da outra em 2 linhas/3 colunas*/
+        margin: 10px 10px;
+    }
+    /* Outros */
+    #outros {
+        flex-direction: row; /* Mudar a direção para linha  */
+        flex-wrap: wrap; /* Quebra de linha nos itens se o tamanho deles forem maior */
+        align-items: flex-start; /* Alinhamento ao começo(flex-start)  */
+        margin: 0 auto; /* Para ficar centralizado(margem de 0 pra cima e pra baixo e automaticamente para os lados) */
+        padding:20px;
+    }
+    
+    /* Centralizar o de outros(h2)  */
+    #outros h2 {
+        text-align: center; /* Centralizar ao centro o cabeçario  */
+        width: 100%; /* Largura de 100%  */
+        font-size:2.0em;
+    }
+    #outros h3 {
+        font-size:1.7em;
+    }
+    
+    /* Restringir as DIVS da section comojogar  */
+    #outros div {
+        flex-grow: 1; /* Definir a proporção como elas crescem ao redor de outros elementos */
+        flex-basis: 150px; /* Equivalente a largura máxima de elementos de blocos(containers) 150px */
+        padding: 0 10px; /* Espaço interno a cada uma  */
+        height: 340px;
+    }
+    #formulario h2{
+        width: 100%;
+        font-size:2.0em;
+    }
+    #formulario p{
+        font-size:1.5em;
+    }
+
+    #login h2{
+        width: 100%;
+        font-size:2.0em;
+    }
+    #login p{
+        font-size:1.5em;
+    }
+
+    #baixar h2{
+        font-size:2.0em;
+    }
+    #baixar p{
+        font-size: 1.5em;
+    }
+    #baixar img{
+        width: 300px;
+    }
+
+
+    /* Mapa */
+    #mapa {
+        flex-direction: row; /* Mudar a direção para linha  */
+        flex-wrap: wrap; /* Quebra de linha nos itens se o tamanho deles forem maior */
+        align-items: flex-start; /* Alinhamento ao começo(flex-start)  */
+        margin: 0 auto; /* Para ficar centralizado(margem de 0 pra cima e pra baixo e automaticamente para os lados) */
+        padding:20px;
+        background-size:cover;
+    }
+    
+    /* Centralizar o cabeçario(h2)  */
+    #mapa h2 {
+        text-align: center; /* Centralizar ao centro o cabeçario  */
+        width: 100%; /* Largura de 100%  */
+        font-size:2.0em;
+    }
+    
+    /* Restringir as DIVS da section servicos  */
+    #mapa div {
+        flex-grow: 1; /* Definir a proporção como elas crescem ao redor de outros elementos */
+        flex-basis: 150px; /* Equivalente a largura máxima de elementos de blocos(containers) 150px */
+        padding: 0 10px; /* Espaço interno a cada uma  */
+    }
+
+}
+
+@media (min-width: 885px) {
+    #como_jogar div {
+            height:450px;
+        }
+
+}
+
+@media (min-width: 1024px) {
+
+    .cabecalho{
+        display:none; 
+    }
+
+    #pagina {
+        display: flex; 
+        flex-direction: row;
+        align-items: center; 
+        background-color: rgba(0,0,0,0.8); 
+        position:fixed;
+        width:100%;
+        height: 60px;
+        z-index: 9999;
+    }
+
+  
+    #pagina > a {
+        width: 20%;
+        text-decoration: none; 
+        color: #8B5A2B; 
+        font-weight: 700; 
+        font-size: 24px; 
+        padding: 0 20px;
+        text-align: center;
+    }
+
+
+   
+    #pagina ul {
+        list-style: none;
+        padding: 0; 
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        width: 70%; 
+    }
+
+    
+    #pagina ul li {
+        text-align: center; 
+        width: 100%; 
+    }
+
+    #pagina ul li a {
+        display: inline-block; 
+        padding: 10px 0; 
+        width: 100%;
+        text-decoration: none; 
+        color: #8B5A2B; 
+    }
+
+    #sobre h2{
+        font-size:2.2em;
+    }
+    #sobre p{
+        font-size:1.6em;
+    }
+    #sugestao{
+        height: 440px;
+    }
+    #sugestao h2{
+        font-size:2.2em;
+    }
+    #sugestao p{
+        font-size:1.6em;
+    }
+
+    #sugestao .input, #sugestao textarea {
+        width:70%;
+    }
+    #sugestao .enviar{
+        float: none;
+    }
+    #como_jogar div {
+        height:520px;
+    }
+    #como_jogar p{
+        font-size:1.6em;
+        height: 200px;
+    }
+    #como_jogar h2 {
+        font-size:2.2em;
+    }
+    #outros div{
+        height:450px;
+    }
+    #outros h2{
+        font-size:2.2em;
+    }
+    #outros p{
+        font-size:1.6em;
+    }
+
+    #galeria h2{
+        font-size:2.2em;
+    }
+    #formulario .input, #formulario textarea {
+        width: 70%;
+    }
+    #formulario select {
+        width: 71%;
+    }
+    #formulario h2{
+        font-size:2.2em;
+    }
+    #formulario p{
+        font-size:1.6em;
+    }
+    
+    #login .input, #formulario textarea {
+        width: 500px;
+    }
+    #login select {
+        width: 71%;
+    }
+    #login h2{
+        font-size:2.2em;
+    }
+    #login p{
+        font-size:1.6em;
+    }
+    
+    #baixar h2{
+        font-size:2.2em;
+    }
+    #baixar p{
+        font-size:1.6em;
+    }
+    #mapa h2{
+        font-size:2.2em;
+    }
+    #mapa h3{
+        font-size:1.6em;
+    }
+}
+
+@media (min-width: 1120px){
+#como_jogar{
+    width: 100%;
+}
+#como_jogar div{
+    width:23%;
+    height:550px;
+    padding: 0.2%;
+}
+#como_jogar div{
+    height: 600px;
+}
+#como_jogar p{
+    height: 250px;
+    }
+}
+/*mudar*/
+@media (min-width: 1440px){
+    #sobre{
+        padding-bottom:50px;
+    }
+    #sobre h2{
+        font-size:2.5em;
+    }
+    #sobre p{
+        font-size:1.8em;
+    }
+    #como_jogar div {
+        height:650px;
+    }
+    #como_jogar h2 {
+        font-size:2.5em;
+    }
+    #como_jogar p {
+        font-size:1.8em;
+    }
+    #outros h2{
+        font-size:2.5em;
+    }
+    #outros h3{
+        font-size:2.0em;
+    }
+    #outros div{
+        height:500px;
+    }
+    #outros p{
+        font-size:1.8em;
+    }
+    #galeria h2{
+        font-size:2.5em;
+    }
+    #formulario h2{
+       font-size:2.5em;
+    }
+    #formulario p{
+       font-size:1.8em;
+    }
+    #formulario .input, #formulario textarea {
+        height:40px;
+    }
+    #formulario select{
+        height:40px;
+    }
+
+    #login h2{
+        font-size:2.5em;
+     }
+     #login p{
+        font-size:1.8em;
+     }
+     #login .input, #formulario textarea {
+         height:40px;
+     }
+     #login select{
+         height:40px;
+     }
+
+    #baixar h2{
+        font-size:2.5em;
+    }
+    #baixar p{
+       font-size:1.8em;
+    }
+    #mapa h2{
+        font-size:2.5em;
+    }
+    #mapa h3{
+        font-size:2.0em;
+    }
+    
+    #sugestao{
+        height: 460px;
+    }
+    #sugestao h2{
+        font-size:2.5em;
+    }
+    #sugestao p{
+        font-size:1.8em;
+    }
+
+}
+@media (min-width: 1180px) {
+    #como_jogar div {
+        height:560px;
+    }
+}
+@media (min-width: 1440px) {
+    #como_jogar div {
+        height:620px;
+    }
+}
+@media (min-width: 1580px) {
+    header{
+        height:900px;
+    }
+    /* Restringir as DIVS da section comojogar  */
+    #como_jogar p{
+        height: 220px;
+    }
+    #outros div {
+        height: 500px;
+    }
+    #mapa div {
+        width:100%;
+    }
+}
+/*mudar*/
+@media (min-width: 1670px) {
+    #como_jogar div {
+        height:650px;
+    }
+    #como_jogar h2 {
+        font-size:2.8em;
+    }
+    #como_jogar p {
+        font-size:2.0em;
+    }
+    #outros div{
+        height:550px;
+    }
+    #outros h2{
+        font-size:2.8em;
+    }
+    #outros h3{
+        font-size:2.4em;
+    }
+    #outros p{
+        font-size:2.0em;
+    }
+    #galeria h2{
+        font-size:2.8em;
+    }
+    #formulario h2{
+        font-size:2.8em;
+    }
+    #formulario label{
+        font-size:2.4em;
+    }
+    #formulario p{
+        font-size:2.0em;
+    }
+
+    #login h2{
+        font-size:2.8em;
+    }
+    #login p{
+        font-size:2.0em;
+    }
+
+    #baixar h2{
+       font-size:2.8em;
+    }
+    #baixar p{
+        font-size:2.0em;
+    }
+    #mapa h2{
+        font-size:2.8em;
+    }
+    #mapa h3{
+        font-size:2.4em;
+    }
+    #sobre h2{
+        font-size:2.8em;
+    }
+    #sobre p{
+        font-size:2.0em;
+    }
+    #sugestao h2{
+        font-size:2.8em;
+    }
+    #sugestao p{
+        font-size:2.0em;
+    }
+}
+/*mudar*/
+@media (min-width: 1850px) {
+    .botao{
+        margin-bottom:1px;
+    }
+    #como_jogar h2 {
+        font-size:3.2em;
+    }
+    #como_jogar div {
+        height: 750px;
+    }
+    #como_jogar p{
+        font-size:2.2em;
+    }
+    #outros h2{
+        font-size:3.2em;
+    }
+    #outros h3{
+        font-size:2.6em;
+    }
+    #outros div{
+        height:650px;
+    }
+    #outros p{
+        font-size:2.2em;
+    }
+    #galeria h2{
+        font-size:3.2em;
+    }
+    #formulario h2{
+        font-size:3.2em;
+    }
+    #formulario p{
+        font-size:2.2em;
+    }
+
+    #login h2{
+        font-size:3.2em;
+    }
+    #login p{
+        font-size:2.2em;
+    }
+
+    #baixar h2{
+        font-size:3.2em;
+    }
+    #baixar p{
+        font-size:2.2em;
+    }
+    #mapa h2{
+        font-size:3.2em;
+    }
+    #mapa h3{
+        font-size:2.3em;
+    }
+    #sobre h2{
+        font-size:3.2em;
+    }
+    #sobre p{
+        font-size:2.2em;
+    }
+    #sugestao h2{
+        font-size:3.2em;
+    }
+    #sugestao p{
+        font-size:2.2em;
+    }
+}   

@@ -7,23 +7,32 @@ final class ProdutoModel{
     /**
      * @var int
      */
-    private $id;
+    public $id;
     /**
      * @var int
      */
-    private $loja_id;
+    public $loja_id;
     /**
      * @var string
      */
-    private $nome;
+    public $nome;
     /**
      * @var float
      */
-    private $preco;
+    public $preco;
     /**
      * @var int
      */
-    private $quantidade;
+    public $quantidade;
+
+    //Função contrusct;
+    public function __construct($id, Loja $loja_id, $nome, $telefone, $endereco){
+        $this->id=$id;
+        $this->loja_id=$loja_id;
+        $this->nome=$nome;
+        $this->preco=$preco;
+        $this->quantidade=$quantidade;
+    }
 
     /**
      * @return int

@@ -33,38 +33,53 @@ final class LojaController{
         $data = $request->getParsedBody();
         
         $lojasDAO = new LojasDAO();
-        $loja = new LojaModel();
+        $loja = new LojaModel(0,$data['nome'],$data['telefone'],$data['endereco']);
         //Como ele retorna ele mesmo "return this" em LojaModel, pode se acessar outros metodos novamente.
-        $loja->setNome($data['nome'])
-            ->setEndereco($data['endereco'])
-            ->setTelefone($data['telefone']);
+        // $loja->setNome($data['nome'])
+        //     ->setEndereco($data['endereco'])
+        //     ->setTelefone($data['telefone']);
         $lojasDAO->insertLoja($loja);
         //Tudo baseado no que tá em Models restringindo o que vai enviar
         $response = $response->withJson(['message' => 'Loja inserida com sucesso!']);
         return $response;
     }
     public function updateLoja(Request $request, Response $response, array $args): Response{
+        $id = $args['id'];
+        
         $data = $request->getParsedBody();
 
         $lojasDAO = new LojasDAO();
-        $loja = new LojaModel();
-        $loja->setId((int)$data['id'])
-            ->setNome($data['nome'])
-            ->setEndereco($data['endereco'])
-            ->setTelefone($data['telefone']);
+        $loja = new LojaModel((int)$id,$data['nome'],$data['telefone'],$data['endereco']);
+        // $loja->setId((int)$data['id'])
+        //     ->setNome($data['nome'])
+        //     ->setEndereco($data['endereco'])
+        //     ->setTelefone($data['telefone']);
         $lojasDAO->updateLoja($loja);
 
         $response = $response->withJson(['message' => 'Loja alterada com sucesso!']);
         return $response;
     }
     public function deleteLoja(Request $request, Response $response, array $args): Response{
+        
         $queryParams = $request->getParsedBody();
-
+        
         $lojasDAO = new LojasDAO();
-        $id = (int)$queryParams['id'];
+        //$id = (int)$args['id'];
+        //$id = (int)$queryParams['id'];
+        $id = $args['id'];
         $lojasDAO->deleteLoja($id);
 
         $response = $response->withJson(['message' => 'Loja deletada com sucesso!']);
         return $response;
+    }
+    //BuscarId
+    public function buscarPorId(Request $request, Response $response, $args): Response{
+        $id = $args['id'];
+
+        $dao = new LojasDAO;
+        $loja = $dao->buscarPorId($id);
+        $response = $response->withJson($loja);
+        return $response;
+        //return $response->withJson($loja);
     }
 }

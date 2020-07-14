@@ -42,4 +42,20 @@ class ProdutosDAO extends Conexao{
 		$statement = $this->pdo->prepare('DELETE FROM produtos WHERE id = :id;'); //consultas
 		$statement->execute(['id'=>$id]);
 	}
+
+	//Buscar por id no Front
+	public function buscarPorId($id){
+		$statement = $this->pdo->prepare('SELECT * FROM produtos WHERE id = :id;');
+		$statement->bindParam ('id', $id);
+		$statement->execute();
+		$result = $statement->fetch(\PDO::FETCH_ASSOC);
+		if($result){
+			return new ProdutoModel($result['id'],$result['loja_id'], $result['nome'], $result['preco'], $result['quantidade']);
+
+		}
+			else
+				return null;
+		
+		
+	}
 }

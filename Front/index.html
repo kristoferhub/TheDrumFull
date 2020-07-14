@@ -1,0 +1,173 @@
+<!-- Para html5 -->
+<!DOCTYPE html>
+<!-- Lang para ptr-br -->
+<html lang="pt-br">
+    <!-- Configurações da página -->
+    <head>
+        <!-- Se usa meta charset="UTF-8"para a letra não ficar zoada -->
+        <meta charset="utf-8">
+        <!-- titulo da pagina(no navegador)-->
+        <title>THE DRUM</title>
+        <!-- Descrição da página -->
+    	<meta name="description" content="O ">
+   		<!-- Auto da página -->
+        <meta name="author" content="Kristofer R_K">
+        <!-- Suporte para outras linguas -->
+        <!-- <meta http-equiv="content-language" content="pt-br, en-US, fr"> -->
+        <!-- Palavras chaves -->
+        <meta name="keywords" content="DRUM">
+        <!-- Dono do site -> creditos -->
+        <meta name="copyright" content="kristoferR_K" >       
+        <!-- Robôs podem indexar a página e ainda seguir os links para outras páginas que ela contém. -->
+        <meta name="robots" content="follow">
+        <!-- forma de comunicação direta com o robô do Google -->
+        <meta name="googlebot" content="archive">
+        <!-- Parte das fontes/Css/java script -->
+    	<!-- Link para os icones -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<!-- Configurar icone da página -->
+    	<link rel="icon"  href="imagens/icone.png">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700|Pacifico' rel='stylesheet' type='text/css'>
+        <!-- Normalize para reiniciar as configurações no navegador -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <!-- Chamar a parte do css -->
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="css/style.css"> 
+        <!-- Adapta o contéudo deste documento ao mobile -->
+        <meta name="viewport" content="width=device-width , initial-sacel=1.0">
+        <!-- rating -->
+        <!-- Importar jquery -->
+        <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+        <!-- Script para descer devagar, só que do servidor(pc) -->
+        <script type="text/javascript" src="js/myscript.js"></script>
+    </head>
+    <!-- Parte visível para os usuários--> 
+    <body>
+        <!-- Área de navegação do menu-->
+        <nav id="pagina">
+            <!-- Link no "Logo" da página para reiniciar(f5) -->
+            <a href="index.html">THE DRUM</a>
+            <!-- Lista não ordenada para opções de menu-->
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a id="login2" href="#login">LOGIN</a></li>
+                <li><a href="#mapa">GALERIA</a></li>
+                <li><a id="produtos" href="#sugestao">PRODUTOS</a></li>
+                <li><a id="lojas" href="#formulario">LOJAS</a></li>
+            </ul>
+        </nav>
+        <header>
+            <!-- Div do cabeçalho para configuração do nav posteriormente -->
+            <div class="cabecalho">
+                    <!-- Link no "Logo" da página para reiniciar(f5) -->
+                    <a href="index.html" class="titulo">THE DRUM</a>
+                    <button class="apertar"> <i class="fa fa-bars fa-lg"></i> </button>
+                    <!-- Área de navegação do menu-->
+                    <nav class="navegar">
+                        <a class="fechar">x</a>
+                        <!-- Lista não ordenada para opções de menu-->
+                        <ul>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="#sobre">SOBRE</a></li>
+                            <li><a id="login2" href="#login">LOGIN</a></li>
+                            <li><a href="#mapa">GALERIA</a></li>
+                            <li><a id="produtos" href="#sugestao">PRODUTOS</a></li>
+                            <li><a id="lojas" href="#formulario">LOJAS</a></li>
+                        </ul>
+                    </nav>
+            </div>
+            <!-- Script do menu -->
+            <script type="text/javascript" src="js/menu.js"></script>
+            <!-- "Class botão" para mudar o estilo no css -->
+            <a href="#sobre" class="botao">VER MAIS</a>
+        </header>
+        <main>
+            <!-- Section do "Sobre", terá a descrição bateria e um botão  -->
+            <section id="sobre">
+                <h2 class="h2">SOBRE</h2>
+                <p>Uma bateria é composta por: bumbo, caixa, pratos, surdo e tons. Cada peça tem suas particularidades e é preciso saber o momento certo de tocar cada uma. A bateria é um instrumento muito interessante para o desenvolvimento da coordenação motora, já que exige do músico movimentos mútuos com as mãos e com os pés!</p>
+                <!-- "Class botão" para mudar o estilo no css -->
+                <a href="#outros" class="botao">Saiba mais!</a>
+            </section>
+
+            <!-- Section com imagens -->
+            <section id="mapa">
+                <h2 class="h2">PRATOS</h2>
+                <div>
+                    <img class="bordinha" src="imagens/zild.png" alt="zildjan">
+                    <h3 class="h3">Zildjan</h3>
+                </div>
+                <div>
+                    <img class="bordinha" src="imagens/orion.png" alt="orion">
+                    <h3 class="h3">Orion</h3>
+                </div>
+                <div>
+                    <img src="imagens/sabian.png" alt="sabian">
+                    <h3 class="h3">Sabian</h3>
+                </div>
+                <div>
+                    <img class="bordinha" src="imagens/krest.png" alt="krest">
+                    <h3 class="h3">Krest</h3>
+                </div>  
+            </section>
+            
+            <!-- Section para baterias -->
+            <section id="baixar">
+                <img src="imagens/premier.png" alt="Mapa">
+                <h2 class="h2">Novo no mundo da bateria?</h2>
+                <hr>
+                <p>Se você for iniciante, aconselho comprar a bateria Premier, é uma boa bateria custo benefício, fora que tem um som ótimo.</p>
+            </section>
+
+
+            <!-- Section do outros, terá imagens e algumas informações dentro de divs  -->
+            <section id="outros">
+                <h2 class="h2">SAIBA MAIS!</h2>
+                <!-- Container(div) -->
+                <div class = "mais">
+                    <img src="imagens/pearl.png" alt="Foto1">
+                    <h3 class="h3">PEARL</h3>
+                    <p>Além da sonoridade o que me chama muito atenção são as  ferragens duráveis com ajustes precisos.”</p>
+                </div>
+                <!-- Container(div) -->
+                <div>
+                    <img src="imagens/yamaha.png" alt="Foto2">
+                    <h3 class="h3">YAMAHA</h3>
+                    <p>"É uma bateria que dá o som que precisamos, quando precisamos. Os requisitos tonais variam consoante o baterista."</p>
+                </div>
+                <!-- Container(div) -->
+                <div>
+                    <img src="imagens/premier.png" alt="Foto3">
+                    <h3 class="h3">PREMIER</h3>
+                    <p>"Possui vários recursos e um excelente desempenho de som, esse conjunto de bateria oferece uma incrível relação custo-benefício e qualidade."</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Rodapé da página -->
+        <footer>
+            <!-- Div para algumas coisas no rodapé -->
+            <div class="local">
+                <!-- Link no "Logo" da página para reiniciar(f5) -->
+                <a href="index.html" class="titulo2">THE DRUM</a>
+                <!-- link do próprio site -->
+                <p><a href="http://www.thedrum.com.br">THE DRUM</a></p>
+            </div>
+        </footer>
+    </body>
+    <script src="js/entidade/loja.js"></script>
+    <script src="js/entidade/produto.js"></script>
+    <script src="js/service/login_service.js"></script>
+    <script src="js/service/loja_service.js"></script>
+    <script src="js/service/produto_service.js"></script>
+    <script src="js/view/login.js"></script>
+    <script src="js/view/form_lojas.js"></script>
+    <script src="js/view/tabela_lojas.js"></script>
+    <script src="js/view/form_produtos.js"></script>
+    <script src="js/view/tabela_produtos.js"></script>
+    <script src="js/controller/login_controller.js"></script>
+    <script src="js/controller/loja_controller.js"></script>
+    <script src="js/controller/produto_controller.js"></script>
+    <script src="js/app.js"></script>
+</html>    
